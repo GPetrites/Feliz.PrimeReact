@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+    </PropertyGroup>
+    <ItemGroup>
+        <Compile Include="Data.fs" />
+        <None Include="index.html" />
+        <Compile Include="Extensions.fs" />
+        <Compile Include="Dialog.fs" />
+        <Compile Include="InputNumber.fs" />
+        <Compile Include="InputControls.fs" />
+        <Compile Include="DataTableDocumentation.fs" />
+        <Compile Include="DataTableColGroup.fs" />
+        <Compile Include="DataTableRowGroup.fs" />
+        <Compile Include="DataTableEdit.fs" />
+        <Compile Include="DataTable1.fs" />
+        <Compile Include="DataTables.fs" />
+        <Compile Include="Index.fs" />
+        <Compile Include="Main.fs" />
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Fable.Core" Version="3.7.0" />
+        <PackageReference Include="Feliz" Version="1.64.0" />
+        <PackageReference Include="Feliz.Router" Version="3.8.0" />
+        <PackageReference Include="Fable.DateFunctions" Version="3.9.0" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\Feliz.PrimeReact\Feliz.PrimeReact.fsproj" />
+    </ItemGroup>
+    <ItemGroup>
+      <PackageReference Update="FSharp.Core" Version="6.0.4" />
+    </ItemGroup>
+</Project>

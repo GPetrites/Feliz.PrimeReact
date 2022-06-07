@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Types.fs" />
+    <Compile Include="Interop.fs" />
+    <Compile Include="Button.fs" />
+    <Compile Include="Column.fs" />
+    <Compile Include="DataTable.fs" />
+    <Compile Include="Dialog.fs" />
+    <Compile Include="DropDown.fs" />
+    <Compile Include="InputNumber.fs" />
+    <Compile Include="InputText.fs" />
+    <Compile Include="TabPanel.fs" />
+    <Compile Include="TabView.fs" />
+    <Compile Include="Icon.fs" />
+    <Compile Include="PrimeReact.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Fable.Core" Version="3.7.0" />
+    <PackageReference Include="Fable.React" Version="8.0.1" />
+    <PackageReference Include="Feliz" Version="1.64.0" />
+    <PackageReference Update="FSharp.Core" Version="6.0.4" />
+  </ItemGroup>
+
+    <ItemGroup>
+        <Content Include="*.fsproj; *.fs; *.js;" Exclude="**\*.fs.js" PackagePath="fable\" />
+    </ItemGroup>
+    <PropertyGroup>
+        <NpmDependencies>
+            <NpmPackage Name="primereact" Version="gte 8.1.1" />
+            <NpmPackage Name="primeicons" Version="gte 5.0.0" />
+        </NpmDependencies>
+    </PropertyGroup>
+</Project>
