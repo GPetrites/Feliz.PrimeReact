@@ -8,8 +8,8 @@ open Feliz.ReactApi
 [<Erase; RequireQualifiedAccess>]
 module Interop =
     let inline mkButtonAttr (key: string) (value: obj) : IButtonProperty = unbox (key, value)
-    let inline mkColumnAttr (key: string) (value: obj) : IColumnProperty = unbox (key, value)
-    let inline mkDataTableAttr (key: string) (value: obj) : IDataTableProperty = unbox (key, value)
+    let inline mkColumnAttr<'T> (key: string) (value: obj) : IColumnProperty<'T> = unbox (key, value)
+    let inline mkDataTableAttr<'T> (key: string) (value: obj) : IDataTableProperty<'T> = unbox (key, value)
     let inline mkDialogAttr (key: string) (value: obj) : IDialogProperty = unbox (key, value)
     let inline mkDropDownAttr (key: string) (value: obj) : IDropDownProperty = unbox (key, value)
     let inline mkInputNumberAttr (key: string) (value: obj) : IInputNumberProperty = unbox (key, value)

@@ -42,49 +42,48 @@ let DataTableEdit () =
         prop.className "datatable-editing-demo"
         prop.children [
             Html.h3 "Cell Editing"
-            Prime.dataTable [
-                dataTable.value rows
-                dataTable.dataKey "Id"
-                dataTable.editMode Cell
-                dataTable.className "editable-cells-table"
-                dataTable.children [
-                    Prime.column [
-                        column.field "Code"
-                        column.header "Code"
-                        column.editor textEditor
-                        column.onCellEditComplete updateRow
-                        column.style [
-                            style.width (length.percent 25)
-                        ]
-                    ]
-                    Prime.column [
-                        column.field "Name"
-                        column.header "Name"
-                        column.editor textEditor
-                        column.onCellEditComplete updateRow
-                        column.style [
-                            style.width (length.percent 25)
-                        ]
-                    ]
-                    Prime.column [
-                        column.field "Quantity"
-                        column.header "Quantity"
-                        column.editor quantityEditor
-                        column.onCellEditComplete updateRow
-                        column.style [
-                            style.width (length.percent 25)
-                        ]
-                    ]
-                    Prime.column [
-                        column.field "Price"
-                        column.header "Price"
-                        column.editor priceEditor
-                        column.onCellEditComplete updateRow
-                        column.style [
-                            style.width (length.percent 25)
-                        ]
-                    ]
-                ]
-            ]
+            Prime.dataTable
+                rows
+                [ dataTable.dataKey "Id"
+                  dataTable.editMode Cell
+                  dataTable.className "editable-cells-table"
+                  dataTable.children [
+                      Prime.column [
+                          column.field (fun r -> r.Code)
+                          column.header "Code"
+                          column.editor textEditor
+                          column.onCellEditComplete updateRow
+                          column.style [
+                              style.width (length.percent 25)
+                          ]
+                      ]
+                      Prime.column [
+                          column.field (fun r -> r.Name)
+                          column.header "Name"
+                          column.editor textEditor
+                          column.onCellEditComplete updateRow
+                          column.style [
+                              style.width (length.percent 25)
+                          ]
+                      ]
+                      Prime.column [
+                          column.field (fun r -> r.Quantity)
+                          column.header "Quantity"
+                          column.editor quantityEditor
+                          column.onCellEditComplete updateRow
+                          column.style [
+                              style.width (length.percent 25)
+                          ]
+                      ]
+                      Prime.column [
+                          column.field (fun r -> r.Price)
+                          column.header "Price"
+                          column.editor priceEditor
+                          column.onCellEditComplete updateRow
+                          column.style [
+                              style.width (length.percent 25)
+                          ]
+                      ]
+                  ] ]
         ]
     ]

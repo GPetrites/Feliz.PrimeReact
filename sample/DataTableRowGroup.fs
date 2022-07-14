@@ -37,34 +37,33 @@ let DataTableRowGroup () =
     Html.div [
         Html.h5 "Subheader Grouping"
         Html.p "Group customers by their representative."
-        Prime.dataTable [
-            dataTable.value Data.customers
-            dataTable.size Small
-            dataTable.showGridlines true
-            dataTable.groupRowsBy "Representative.Name"
-            dataTable.sortField "Representative.Name"
-            dataTable.sortOrder 1
-            dataTable.rowGroupMode SubHeader
-            dataTable.sortMode DataTableSortMode.Single
-            dataTable.rowGroupHeaderTemplate rowGroupHeaderTemplate
-            dataTable.rowGroupFooterTemplate rowGroupFooterTemplate
-            dataTable.children [
-                Prime.column [
-                    column.field "Name"
-                    column.header "Name"
-                ]
-                Prime.column [
-                    column.field "Country.Name"
-                    column.header "Country"
-                ]
-                Prime.column [
-                    column.field "Company"
-                    column.header "Company"
-                ]
-                Prime.column [
-                    column.field "Status"
-                    column.header "Status"
-                ]
-            ]
-        ]
+        Prime.dataTable
+            Data.customers
+            [ dataTable.size Small
+              dataTable.showGridlines true
+              dataTable.groupRowsBy "Representative.Name"
+              dataTable.sortField "Representative.Name"
+              dataTable.sortOrder 1
+              dataTable.rowGroupMode SubHeader
+              dataTable.sortMode DataTableSortMode.Single
+              dataTable.rowGroupHeaderTemplate rowGroupHeaderTemplate
+              dataTable.rowGroupFooterTemplate rowGroupFooterTemplate
+              dataTable.children [
+                  Prime.column [
+                      column.field (fun r -> r.Name)
+                      column.header "Name"
+                  ]
+                  Prime.column [
+                      column.field (fun r -> r.Country.Name)
+                      column.header "Country"
+                  ]
+                  Prime.column [
+                      column.field (fun r -> r.Company)
+                      column.header "Company"
+                  ]
+                  Prime.column [
+                      column.field (fun r -> r.Status)
+                      column.header "Status"
+                  ]
+              ] ]
     ]

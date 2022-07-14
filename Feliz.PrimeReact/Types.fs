@@ -8,12 +8,16 @@ type IButtonProperty =
     end
 
 [<Erase>]
-type IColumnProperty =
+type IColumnProperty<'T> =
     interface
     end
 
 [<Erase>]
-type IDataTableProperty =
+type IDataTableProperty<'T> =
+    interface
+    end
+
+type IDataTableChild<'T> =
     interface
     end
 

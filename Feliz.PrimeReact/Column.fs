@@ -68,7 +68,14 @@ type column =
 
     static member inline colSpan(value: int) = Interop.mkColumnAttr "colSpan" value
     static member inline dataType(value: ColumnDataType) = Interop.mkColumnAttr "dataType" value
-    static member inline field(value: string) = Interop.mkColumnAttr "field" value
+
+    static member inline field<'T, 'D>(value: ('T -> 'D)) =
+        Experimental.namesofLambda (value)
+        |> String.concat "."
+        |> Interop.mkColumnAttr<'T> "field"
+
+    static member inline fieldName(value: string) = Interop.mkColumnAttr<'T> "field" value
+
     static member inline filter(value: bool) = Interop.mkColumnAttr "filter" value
     static member inline footer(value: string) = Interop.mkColumnAttr "footer" value
 

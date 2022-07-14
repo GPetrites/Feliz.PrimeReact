@@ -90,18 +90,22 @@ let DataTableColGroup () =
             ]
             Prime.row [
                 Prime.column [
+                    column.field (fun r -> r.lastYearSale)
                     column.header "Last Year"
                     column.sortable true
                 ]
                 Prime.column [
+                    column.field (fun r -> r.thisYearSale)
                     column.header "This Year"
                     column.sortable true
                 ]
                 Prime.column [
+                    column.field (fun r -> r.lastYearProfit)
                     column.header "Last Year"
                     column.sortable true
                 ]
                 Prime.column [
+                    column.field (fun r -> r.thisYearProfit)
                     column.header "This Year"
                     column.sortable true
                 ]
@@ -140,24 +144,26 @@ let DataTableColGroup () =
         ]
 
     Html.div [
-        Prime.dataTable [
-            dataTable.headerColumnGroup headerGroup
-            dataTable.footerColumnGroup footerGroup
-            dataTable.value sales
-            dataTable.children [
-                Prime.column [ column.field "product" ]
-                Prime.column [
-                    column.field "lastYearSale"
-                ]
-                Prime.column [
-                    column.field "thisYearSale"
-                ]
-                Prime.column [
-                    column.field "lastYearProfit"
-                ]
-                Prime.column [
-                    column.field "thisYearProfit"
-                ]
-            ]
-        ]
+        Prime.dataTable
+            sales
+            [ dataTable.headerColumnGroup headerGroup
+              dataTable.footerColumnGroup footerGroup
+              dataTable.value sales
+              dataTable.children [
+                  Prime.column [
+                      column.field (fun r -> r.product)
+                  ]
+                  Prime.column [
+                      column.field (fun r -> r.lastYearSale)
+                  ]
+                  Prime.column [
+                      column.field (fun r -> r.thisYearSale)
+                  ]
+                  Prime.column [
+                      column.field (fun r -> r.lastYearProfit)
+                  ]
+                  Prime.column [
+                      column.field (fun r -> r.thisYearProfit)
+                  ]
+              ] ]
     ]

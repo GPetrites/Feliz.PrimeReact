@@ -136,8 +136,9 @@ type dataTable =
     static member inline virtualScrollerOptions(value: DataTableVirtualScrollingOptions list) =
         Interop.mkDataTableAttr "virtualScrollerOptions" (keyValueList CaseRules.LowerFirst value)
 
-    static member inline children(elements: ReactElement list) =
-        unbox<IDataTableProperty> (prop.children elements)
+    static member inline children<'T>(elements: IDataTableChild<'T> list) =
+        let elem: ReactElement list = !!elements
+        unbox<IDataTableProperty<'T>> (prop.children elem)
 
     static member inline onSelectionChange(handler: 'T option -> unit) =
         Interop.mkDataTableAttr "onSelectionChange" (fun (e: DataTableSelectionChangeParams<'T>) -> handler e.value)

@@ -10,8 +10,8 @@ type Prime =
     static member inline button(properties: IButtonProperty list) =
         Interop.reactApi.createElement (import "Button" "primereact/button", createObj !!properties)
 
-    static member inline column(properties: IColumnProperty list) =
-        Interop.reactApi.createElement (import "Column" "primereact/column", createObj !!properties)
+    static member inline column<'T>(properties: IColumnProperty<'T> list) : IDataTableChild<'T> =
+        !!(Interop.reactApi.createElement (import "Column" "primereact/column", createObj !!properties))
 
     static member inline columnGroup(children: ReactElement list) =
         Interop.reactApi.createElement (
@@ -19,8 +19,11 @@ type Prime =
             createObj [ "children" ==> children ]
         )
 
-    static member inline dataTable(properties: IDataTableProperty list) =
-        Interop.reactApi.createElement (import "DataTable" "primereact/datatable", createObj !!properties)
+    static member inline dataTable<'T> (rows: 'T seq) (properties: IDataTableProperty<'T> list) =
+        Interop.reactApi.createElement (
+            import "DataTable" "primereact/datatable",
+            createObj !!((dataTable.value rows) :: properties)
+        )
 
     static member inline dialog(properties: IDialogProperty list) =
         Interop.reactApi.createElement (import "Dialog" "primereact/dialog", createObj !!properties)
@@ -34,7 +37,8 @@ type Prime =
     static member inline inputText(properties: IInputTextProperty list) =
         Interop.reactApi.createElement (import "InputText" "primereact/inputtext", createObj !!properties)
 
-    static member inline row(children: ReactElement list) =
+    static member inline row<'T>(children: IDataTableChild<'T> list) =
+        let elem: ReactElement list = !!children
         Interop.reactApi.createElement (import "Row" "primereact/row", createObj [ "children" ==> children ])
 
     static member inline tabPanel(properties: ITabPanelProperty list) =
