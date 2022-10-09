@@ -4,7 +4,6 @@ open Feliz
 open Feliz.PrimeReact
 
 type row = { Id: int; Name: string; Amt: int }
-type xxx = { A: int }
 
 let data =
     [ 1..20000 ]
@@ -24,11 +23,11 @@ let DataTable1 () =
             prop.text (sprintf "ID: %i" id)
         ]
 
-    let body1 (row: row) = (sprintf "Body 1 : %i" row.Id)
+    let thisYear (row: row) = (sprintf "This year : %i" row.Id)
 
-    let body2 (row: row) =
-        let t = sprintf "Body 2 : %i" row.Id
-        Html.header [ prop.text t ]
+    let lastYear row =
+        let txt = sprintf "Last year : %i" row.Id
+        Html.header [ prop.text txt ]
 
     Html.div [
         Html.div (sprintf "Selection %A" selection)
@@ -80,12 +79,12 @@ let DataTable1 () =
                   ]
                   Prime.column [
                       column.header "This Year"
-                      column.body body1
+                      column.body thisYear
                   ]
                   Prime.column [
                       column.header "Last Year"
                       column.field (fun r -> r.Amt)
-                      column.body body2
+                      column.body lastYear
                   ]
                   Prime.column [
                       column.header "This Year"

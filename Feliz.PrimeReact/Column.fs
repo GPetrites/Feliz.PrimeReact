@@ -49,8 +49,8 @@ type column =
         Interop.mkColumnAttr "alignHeader" value
 
     static member inline body(value: string) = Interop.mkColumnAttr "body" value
-    static member inline body(rowData: 'T -> string) = Interop.mkColumnAttr "body" rowData
-    static member inline body(rowData: 'T -> ReactElement) = Interop.mkColumnAttr "body" rowData
+    static member inline body<'T>(rowData: 'T -> string) = Interop.mkColumnAttr<'T> "body" rowData
+    static member inline body<'T>(rowData: 'T -> ReactElement) = Interop.mkColumnAttr<'T> "body" rowData
 
     static member inline bodyClassName(value: string) =
         Interop.mkColumnAttr "bodyClassName" value
