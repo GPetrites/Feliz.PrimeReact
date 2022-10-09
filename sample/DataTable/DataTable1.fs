@@ -1,4 +1,4 @@
-module App.DataTable1
+module DataTable1
 
 open Feliz
 open Feliz.PrimeReact
@@ -15,7 +15,7 @@ let data =
 let initialSelection: Option<row> = None
 
 [<ReactComponent>]
-let DataTable1 () =
+let Component () =
     let (selection, setSelection) = React.useState (initialSelection)
 
     let idFormat (id: int) =

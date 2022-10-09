@@ -1,11 +1,11 @@
-module App.DataTableRowGroup
+module DataTableRowGroup
 
 open Browser.Dom
 open Feliz
 open Feliz.PrimeReact
 
 [<ReactComponent>]
-let DataTableRowGroup () =
+let Component () =
     let rowGroupHeaderTemplate (data: Data.Customer) =
         Html.span [
             prop.text data.Representative.Name

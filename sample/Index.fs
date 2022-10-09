@@ -15,24 +15,20 @@ let Index () =
             tabView.children [
                 Prime.tabPanel [
                     tabPanel.header "Data Tables"
-                    tabPanel.children [
-                        DataTables.DataTables()
-                    ]
+                    tabPanel.children [ DataTable.Index() ]
                 ]
                 Prime.tabPanel [
                     tabPanel.header "Dialog"
-                    tabPanel.children [ Dialog.Dialog() ]
+                    tabPanel.children [ Dialog.Index() ]
                 ]
                 Prime.tabPanel [
-                    tabPanel.header "Input Controls"
-                    tabPanel.children [
-                        InputControls.InputControls()
-                    ]
+                    tabPanel.header "Input Text"
+                    tabPanel.children [ InputText.Index() ]
                 ]
                 Prime.tabPanel [
                     tabPanel.header "Input Number"
                     tabPanel.children [
-                        InputNumber.InputNumber()
+                        InputNumber.Index()
                     ]
                 ]
             ]

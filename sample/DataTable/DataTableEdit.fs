@@ -5,7 +5,7 @@ open Feliz
 open Feliz.PrimeReact
 
 [<ReactComponent>]
-let DataTableEdit () =
+let Component () =
     let (rows, setRows) = React.useState (Data.products)
 
     let updateRow (o: CellOnEditCompleteEvent<Data.Product>) =

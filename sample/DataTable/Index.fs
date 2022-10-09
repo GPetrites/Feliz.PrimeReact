@@ -1,10 +1,10 @@
-module App.DataTables
+module DataTable
 
 open Feliz
 open Feliz.PrimeReact
 
 [<ReactComponent>]
-let DataTables () =
+let Index () =
     let (activeIndex, setActiveIndex) = React.useState (3)
 
     Html.div [
@@ -15,31 +15,31 @@ let DataTables () =
                 Prime.tabPanel [
                     tabPanel.header "Documentation"
                     tabPanel.children [
-                        DataTableDocumentation.DataTableDocumentation()
+                        DataTableDocumentation.Component()
                     ]
                 ]
                 Prime.tabPanel [
                     tabPanel.header "Data Table 1"
                     tabPanel.children [
-                        DataTable1.DataTable1()
+                        DataTable1.Component()
                     ]
                 ]
                 Prime.tabPanel [
                     tabPanel.header "ColGroup"
                     tabPanel.children [
-                        DataTableColGroup.DataTableColGroup()
+                        DataTableColGroup.Component()
                     ]
                 ]
                 Prime.tabPanel [
                     tabPanel.header "RowGroup"
                     tabPanel.children [
-                        DataTableRowGroup.DataTableRowGroup()
+                        DataTableRowGroup.Component()
                     ]
                 ]
                 Prime.tabPanel [
                     tabPanel.header "Edit"
                     tabPanel.children [
-                        DataTableEdit.DataTableEdit()
+                        DataTableEdit.Component()
                     ]
                 ]
             ]

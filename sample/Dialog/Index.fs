@@ -1,10 +1,10 @@
-module App.Dialog
+module Dialog
 
 open Feliz
 open Feliz.PrimeReact
 
 [<ReactComponent>]
-let Dialog () =
+let Index () =
     let (isDialogVisible, setIsDialogVisible) = React.useState (false)
     let showDialog () = setIsDialogVisible true
     let hideDialog () = setIsDialogVisible false

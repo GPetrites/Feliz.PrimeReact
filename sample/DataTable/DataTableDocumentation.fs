@@ -1,10 +1,10 @@
-module App.DataTableDocumentation
+module DataTableDocumentation
 
 open Feliz
 open Feliz.PrimeReact
 
 [<ReactComponent>]
-let DataTableDocumentation () =
+let Component () =
     let formatDate (d: System.DateTime) = d.ToString("MM/dd/yyyy")
 
     Html.div [

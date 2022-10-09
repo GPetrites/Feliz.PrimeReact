@@ -1,4 +1,4 @@
-module App.DataTableColGroup
+module DataTableColGroup
 
 open Feliz
 open Feliz.PrimeReact
@@ -65,7 +65,7 @@ let sales =
 let initialSelection: Option<Sale> = None
 
 [<ReactComponent>]
-let DataTableColGroup () =
+let Component () =
     let headerGroup =
         Prime.columnGroup [
             Prime.row [

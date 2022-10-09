@@ -1,4 +1,4 @@
-module App.InputControls
+module InputText
 
 open Feliz
 open Feliz.PrimeReact
@@ -15,7 +15,7 @@ let data =
 let initialSelection: Option<row> = None
 
 [<ReactComponent>]
-let InputControls () =
+let Index () =
     let (textValue, setTextValue) = React.useState ("my text")
     let (selectedOption, setSelectedOption) = React.useState (Some 3)
 
