@@ -5,7 +5,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <RepositoryUrl>https://github.com/GPetrites/Feliz.PrimeReact</RepositoryUrl>
     <Authors>Greg Petrites</Authors>
-    <Description>Feliz-style Fable bindings for Microsoft Graph Toolkit</Description>
+    <Description>Feliz-style Fable bindings for PrimeReact</Description>
     <PackageTags>fsharp fable react html</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>readme.md</PackageReadmeFile>
