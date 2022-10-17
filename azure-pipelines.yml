@@ -22,10 +22,9 @@ stages:
           - checkout: self
             persistCredentials: true
 
-          - task: gittools.gitversion.gitversion-task.GitVersion@4
-            displayName: Generate version number using GitVersion
+          - task: GitVersion@5
             inputs:
-              updateAssemblyInfo: false
+              runtime: 'core'
 
           - task: UpdateBuildNumber@0
             displayName: Update Build Number
