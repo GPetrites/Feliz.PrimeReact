@@ -22,9 +22,11 @@ stages:
           - checkout: self
             persistCredentials: true
 
-          - task: GitVersion@5
+          - task: UseGitVersion@5
+            displayName: gitversion
             inputs:
-              runtime: 'core'
+            versionSpec: 5.x
+            enabled: true
 
           - task: UpdateBuildNumber@0
             displayName: Update Build Number
