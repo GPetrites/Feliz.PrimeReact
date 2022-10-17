@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PackageProjectUrl>https://gpetrites.github.io/Feliz.PrimeReact</PackageProjectUrl>
     <RepositoryUrl>https://github.com/GPetrites/Feliz.PrimeReact</RepositoryUrl>
     <Authors>Greg Petrites</Authors>
     <Description>Feliz-style Fable bindings for PrimeReact</Description>
