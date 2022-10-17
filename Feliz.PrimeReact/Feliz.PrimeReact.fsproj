@@ -40,8 +40,8 @@
     </ItemGroup>
     <PropertyGroup>
         <NpmDependencies>
-            <NpmPackage Name="primereact" Version="gte 8.1.1" />
-            <NpmPackage Name="primeicons" Version="gte 5.0.0" />
+            <NpmPackage Name="primereact" Version="gte 8.1.1 lt 9" />
+            <NpmPackage Name="primeicons" Version="gte 5.0.0 lt 6" />
         </NpmDependencies>
     </PropertyGroup>
 </Project>
