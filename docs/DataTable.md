@@ -2,6 +2,45 @@
 
 DataTable provides bindings for [DataTable](https://www.primefaces.org/primereact/datatable/)
 
+## Table value and Column field references
+
+The DataTable binding is unusual in how it receives the **value** property which contains the collection of data to present as rows.  Rather than implementing a **dataTable.value**, the rows must be passed as the fist parameter prior to all other properties:
+
+```fsharp
+Prime.dataTable
+    data
+    [ ... ]
+```
+
+Through the magic of generics and type inference, this provides the data types for the rows and allows for strongly typed references to the fields for columns:
+
+```fsharp
+Prime.column [
+    column.field (fun r -> r.Id)
+]
+```
+
+The column field can even reference simple nested properties:
+
+```fsharp
+Prime.column [
+    column.field (fun r -> r.Country.Name)
+    column.header "Country"
+]
+```
+
+Obviously, strongly typed references are preferred to benefit from intellisense and to prevent errors, but columns also support referencing the field by name using a string:
+
+```fsharp
+Prime.column [
+    column.fieldName "Country.Name"
+    column.header "Country"
+]
+```
+
+
+## Sample
+
 Below is a sample of how to use the DataTable bindings. Refer to the code samples in the repository for more examples.
 
 ```fsharp
