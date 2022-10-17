@@ -3,7 +3,7 @@ Feliz style bindings for [PrimReact](https://www.primefaces.org/primereact/)
 
 Here's how it looks:
 
-```fs
+```fsharp
 module App
 
 open Feliz
@@ -26,7 +26,7 @@ let MyComponent () =
     ]
 ```
 
-`NOTE:` This is very much an early release which includes just a small subset of the PrimeReact controls and properties, It should be a solid foundation for extending into the other controls. Issue requesting new features are very much welcome.
+> `NOTE:` This is very much an early release which includes just a small subset of the PrimeReact controls and properties, It should be a solid foundation for extending into the other controls. Issue requesting new features are very much welcome.
 
 ## Installation
 

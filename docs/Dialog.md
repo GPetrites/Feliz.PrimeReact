@@ -1,5 +1,6 @@
-module Dialog
+# Dialog
 
+```fsharp
 open Feliz
 open Feliz.PrimeReact
 
@@ -22,6 +23,23 @@ let Index () =
         ]
 
     Html.div [
+        Prime.dialog [
+            dialog.header "Dialog header"
+            dialog.footer dialogFooter
+            dialog.visible isDialogVisible
+            dialog.onHide hideDialog
+            dialog.maximizable true
+            dialog.maximized true
+            dialog.modal true
+            dialog.position DialogPosition.TopLeft
+            dialog.children [
+                Html.div "Dialog contents"
+            ]
+            dialog.resizable true
+            dialog.style [
+                style.width (length.vw 50)
+            ]
+        ]
         Prime.button [
             button.className [
                 buttonClass.rounded
@@ -40,21 +58,5 @@ let Index () =
             button.label "Cancel"
             button.disabled true
         ]
-        Prime.dialog [
-            dialog.header "Dialog header"
-            dialog.footer dialogFooter
-            dialog.visible isDialogVisible
-            dialog.onHide hideDialog
-            dialog.maximizable true
-            dialog.maximized true
-            dialog.modal true
-            dialog.position DialogPosition.TopLeft
-            dialog.children [
-                Html.div "Dialog contents"
-            ]
-            dialog.resizable true
-            dialog.style [
-                style.width (length.vw 50)
-            ]
-        ]
     ]
+```
