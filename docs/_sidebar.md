@@ -7,5 +7,7 @@
     - [Button](Button.md)
 - DATA
     - [DataTable](DataTable.md)
+- PANEL
+    - [TabView](TabView.md)
 - OVERLAY
     - [Dialog](Dialog.md)
