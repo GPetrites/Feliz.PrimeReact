@@ -41,7 +41,7 @@ stages:
           - task: UpdateBuildNumber@0
             displayName: Update Build Number
             inputs:
-              buildNumber: GPetrites.Feliz.PrimeReact $(Build.BuildNumber)
+              buildNumber: Feliz.PrimeReact $(Build.BuildNumber)
 
           - task: DotNetCoreCLI@2
             displayName: Build and Pack
