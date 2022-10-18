@@ -1,5 +1,10 @@
-module App.Index
+# TabView
 
+TabView provides bindings for [TabView](https://www.primefaces.org/primereact/tabview/)
+
+Below is a sample of how to use the TabView bindings
+
+```fsharp
 open Feliz
 open Feliz.PrimeReact
 
@@ -33,3 +38,4 @@ let Index () =
             ]
         ]
     ]
+```

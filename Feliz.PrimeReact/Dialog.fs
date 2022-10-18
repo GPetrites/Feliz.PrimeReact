@@ -30,7 +30,7 @@ type dialog =
     static member inline maximized(value: bool) = Interop.mkDialogAttr "maximized" value
 
     static member inline modal(value: bool) = Interop.mkDialogAttr "modal" value
-    static member inline postion(value: DialogPosition) = Interop.mkDialogAttr "position" value
+    static member inline position(value: DialogPosition) = Interop.mkDialogAttr "position" value
     static member inline resizable(value: bool) = Interop.mkDialogAttr "resizable" value
     static member inline visible(value: bool) = Interop.mkDialogAttr "visible" value
 
