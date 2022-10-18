@@ -15,6 +15,7 @@ pr:
     - docs
   drafts: false
 
+  
 stages:
   - stage: serverBuild
     displayName: "Server Build"
